@@ -18,6 +18,7 @@ namespace TOC
 
         private int GetShiftingTime(int initialTimeSetting)
         {
+            //return initialTimeSetting;
             var randomNum = _rand.Next(1, 100);
             if (randomNum <= 5)
                 return initialTimeSetting - 2;

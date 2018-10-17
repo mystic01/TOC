@@ -108,14 +108,14 @@ namespace TOC
 
         private void OutputStatisticData()
         {
-            var takeTime = "NONE";
+            var takeTime = "";
             if (_lastFinishedGoods != null)
                 takeTime = (_lastFinishedGoods.EndTimeStamp - _lastFinishedGoods.StartTimeStamp).ToString();
-            Console.WriteLine($"Total Working Time of the Last Goods: {takeTime}");
+            Console.WriteLine($"最後一個成品總加工時間：{takeTime}");
             if (_totalFinishedCount > 0)
             {
-                Console.WriteLine($"Finished Goods:{_totalFinishedCount}");
-                Console.WriteLine($"Average Working Time: {_totalTakeTime / _totalFinishedCount}");
+                Console.WriteLine($"完成產品數：{_totalFinishedCount}");
+                Console.WriteLine($"平均加工時間：{_totalTakeTime / _totalFinishedCount}");
             }
             else
             {
@@ -127,7 +127,7 @@ namespace TOC
         private void OutputGoodsStatus()
         {
             //Goods .     .         .
-            Console.Write($"{"Goods",10}");
+            Console.Write("貨物流    ");
             for (int i = 0; i < _stations.Length; i++)
             {
                 Console.Write(" ");
@@ -146,7 +146,7 @@ namespace TOC
         private void OutputStationWorkingTime()
         {
             //Time   3    5    2    3
-            Console.Write($"{"TIME",10}");
+            Console.Write("所需時間  ");
             foreach (var station in _stations)
                 Console.Write($"{station.Time,5}");
             Console.WriteLine();
@@ -155,7 +155,7 @@ namespace TOC
         private void OutputStationNumber()
         {
             //NO.    1    2    3    4
-            Console.Write($"{"No.",10}");
+            Console.Write("設備編號  ");
             for (int i = 0; i < _stations.Length; i++)
                 Console.Write($"{i,5}");
             Console.WriteLine();
